@@ -21,7 +21,7 @@ var current_lines = ""
 var plaing_line = false
 var plaing_lines = false
 
-var active = true
+var active = false
 
 func _ready():
 	play_lines("wazon")
@@ -61,6 +61,8 @@ func play_lines( name_of_lines ):
 	current_lines = name_of_lines
 	plaing_lines = true
 	
+	active = true
+	
 	next_line()
 	modulate = Color("#ffffff")
 
@@ -70,11 +72,15 @@ func _on_DialogLine2_line_ended( is_last ):
 	
 	# chek if no more lines to diplay
 	if lines[current_lines].empty():
-		pass
+		
+		# make option if need
+		match current_lines:
+			"wazon" :
+				$AutoLine.stop()
+				get_node("../Decision").make_decision( current_lines )
 
 # if player waits to long go for next line !
 func _on_AutoLine_timeout():
-	print("auto next")
 	next_line()
 	$AutoLine.stop()
 
@@ -84,10 +90,16 @@ func on_lines_ends( lines_name ):
 	
 	match lines_name:
 		"wazon" :
-			play_lines( "conti" )
+			pass
+			#play_lines( "conti" )
 		_:
 			if plaing_lines == false:
-				#$DialogLine2.text = " " 
-				$AnimationPlayer.play("fade")
-				$NextLetterTimer.stop()
-				$AutoLine.stop()
+				fade_lines()
+
+func fade_lines():
+	$AnimationPlayer.play("fade")
+	$NextLetterTimer.stop()
+	$AutoLine.stop()
+
+func _on_Decision_decision_over( decision_name_siganl ):
+	fade_lines()

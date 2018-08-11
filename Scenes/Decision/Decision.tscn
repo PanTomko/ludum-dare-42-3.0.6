@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Dialoge/Decision.gd" type="Script" id=1]
 [ext_resource path="res://Textures/text-arrow-small.png" type="Texture" id=2]
+[ext_resource path="res://Audio/Sounds/Click_01.wav" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 
@@ -22,7 +23,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 0 ]
 }
 
-[node name="Decision" type="Control" index="0"]
+[node name="Decision" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -43,8 +44,8 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -11.0
-margin_bottom = 8.0
+margin_top = -16.0
+margin_bottom = 3.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -60,6 +61,7 @@ _sections_unfolded = [ "Visibility", "custom_constants" ]
 editor/display_folded = true
 texture = ExtResource( 2 )
 hframes = 4
+frame = 2
 _sections_unfolded = [ "Animation" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Arrow" index="0"]
@@ -72,5 +74,32 @@ playback_speed = 0.5
 anims/idlle = SubResource( 1 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 3 )
+volume_db = -15.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "New Bus"
+
+[node name="TimerHighlight" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = false
+
+[node name="Timer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 0.1
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="TimerHighlight" to="." method="_on_TimerHighlight_timeout"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 
