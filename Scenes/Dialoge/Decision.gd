@@ -1,8 +1,13 @@
 extends Control
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+# Data for options that player teak and what oprion he have
+var options = {
+	"doo" : {
+		"option" : ["lul", "lul2"],
+		"took" : -1
+	}
+}
+
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
