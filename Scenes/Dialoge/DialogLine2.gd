@@ -20,7 +20,7 @@ func set_text_to_show( text_n ):
 
 func _on_NextLetterTimer_timeout():
 	if text != text_to_show:
-		
+		get_parent().plaing_line = true
 		text += text_to_show[curren_counter]
 		
 		# play sound

@@ -21,17 +21,29 @@ var current_lines = ""
 var plaing_line = false
 var plaing_lines = false
 
+var active = true
+
 func _ready():
 	play_lines("wazon")
 
 func _process(delta):
 	
-	if plaing_lines:
+	if plaing_lines && active:
 		# play next or skipp curren line !
 		if Input.is_action_just_pressed( "ui_accept"):
-			$AutoLine.stop()
-			next_line()
-			
+			if plaing_line:
+				print("hmm2")
+				skip_line_animation()
+			else:
+				print("hmm")
+				$AutoLine.stop()
+				next_line()
+
+# 
+func skip_line_animation():
+	$DialogLine2.text = $DialogLine2.text_to_show
+	print("spik")
+
 
 # Set next line
 func next_line():
