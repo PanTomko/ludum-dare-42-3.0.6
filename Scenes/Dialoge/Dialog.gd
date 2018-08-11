@@ -32,10 +32,8 @@ func _process(delta):
 		# play next or skipp curren line !
 		if Input.is_action_just_pressed( "ui_accept"):
 			if plaing_line:
-				print("hmm2")
 				skip_line_animation()
 			else:
-				print("hmm")
 				$AutoLine.stop()
 				next_line()
 
@@ -87,7 +85,6 @@ func on_lines_ends( lines_name ):
 	match lines_name:
 		"wazon" :
 			play_lines( "conti" )
-			$SoundOnLetter.stream = preload("res://Audio/Sounds/Beep_sound_02.wav")
 		_:
 			if plaing_lines == false:
 				#$DialogLine2.text = " " 

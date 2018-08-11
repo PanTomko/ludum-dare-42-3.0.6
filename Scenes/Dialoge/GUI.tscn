@@ -77,8 +77,8 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -98.0
-margin_bottom = -8.0
+margin_top = -113.0
+margin_bottom = -23.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -128,11 +128,12 @@ size_flags_vertical = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Decision" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -11.0
+margin_bottom = 8.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
