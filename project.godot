@@ -11,8 +11,10 @@ config_version=3
 [application]
 
 config/name="Game Jam"
+run/main_scene="res://Scenes/Dialoge/GUI.tscn"
 config/icon="res://icon.png"
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"

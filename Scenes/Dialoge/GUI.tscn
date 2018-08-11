@@ -1,0 +1,121 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Dialoge/Dialog.gd" type="Script" id=1]
+[ext_resource path="res://Audio/Sounds/Beep_sound_01.wav" type="AudioStream" id=2]
+[ext_resource path="res://Resources/Dynamic-Font/munro.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scenes/Dialoge/DialogLine2.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "fade"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="GUI" type="CanvasLayer"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Dialog" type="Control" parent="." index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+_sections_unfolded = [ "Size Flags", "Visibility" ]
+
+[node name="NextLetterTimer" type="Timer" parent="Dialog" index="0"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = false
+autostart = false
+
+[node name="SoundOnLetter" type="AudioStreamPlayer" parent="Dialog" index="1"]
+
+stream = ExtResource( 2 )
+volume_db = -2.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AutoLine" type="Timer" parent="Dialog" index="2"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = false
+autostart = false
+_sections_unfolded = [ "Pause" ]
+
+[node name="DialogLine2" type="Label" parent="Dialog" index="3"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -90.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+text = "Damne some                           texxt to show and its verry               neet and cool                              reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee reeeeeeeeeeeeeeeeeeeeeeeeeeeeee reeeeeeeeeeeeeee end !"
+align = 1
+valign = 1
+autowrap = true
+percent_visible = -0.00675676
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 4 )
+
+[node name="FadeTimer" type="Timer" parent="Dialog" index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialog" index="5"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/fade = SubResource( 1 )
+blend_times = [  ]
+
+[connection signal="timeout" from="Dialog/NextLetterTimer" to="Dialog/DialogLine2" method="_on_NextLetterTimer_timeout"]
+
+[connection signal="timeout" from="Dialog/AutoLine" to="Dialog" method="_on_AutoLine_timeout"]
+
+[connection signal="line_ended" from="Dialog/DialogLine2" to="Dialog" method="_on_DialogLine2_line_ended"]
+
+
