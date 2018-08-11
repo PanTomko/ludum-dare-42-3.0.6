@@ -4,7 +4,7 @@
 [ext_resource path="res://Audio/Sounds/Beep_sound_01.wav" type="AudioStream" id=2]
 [ext_resource path="res://Resources/Dynamic-Font/munro.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scenes/Dialoge/DialogLine2.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Dialoge/Decision.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Decision/Decision.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="GUI" type="CanvasLayer" index="0"]
+[node name="GUI" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -113,86 +113,7 @@ playback_speed = 1.0
 anims/fade = SubResource( 1 )
 blend_times = [  ]
 
-[node name="Decision" type="Control" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -20.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-script = ExtResource( 5 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Decision" index="0"]
-
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -11.0
-margin_bottom = 8.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_constants/separation = 25
-alignment = 1
-_sections_unfolded = [ "custom_constants" ]
-
-[node name="Label" type="Label" parent="Decision/HBoxContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 447.0
-margin_right = 499.0
-margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
-text = "option 1"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
-
-[node name="Label2" type="Label" parent="Decision/HBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 524.0
-margin_right = 576.0
-margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
-text = "option 1"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+[node name="Decision" parent="." index="1" instance=ExtResource( 5 )]
 
 [connection signal="timeout" from="Dialog/NextLetterTimer" to="Dialog/DialogLine2" method="_on_NextLetterTimer_timeout"]
 

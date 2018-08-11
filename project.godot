@@ -11,8 +11,13 @@ config_version=3
 [application]
 
 config/name="Game Jam"
-run/main_scene="res://Scenes/Dialoge/GUI.tscn"
+run/main_scene="res://Scenes/World/World.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [input]
 
@@ -37,3 +42,4 @@ ui_down=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"
 
 quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=true
