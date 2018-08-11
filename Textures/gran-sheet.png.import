@@ -16,11 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-<<<<<<< HEAD
 flags/filter=false
-=======
-flags/filter=true
->>>>>>> 601791e7da3d42fc495606a5368c5873a0882286
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -29,9 +25,5 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-<<<<<<< HEAD
 detect_3d=false
-=======
-detect_3d=true
->>>>>>> 601791e7da3d42fc495606a5368c5873a0882286
 svg/scale=1.0

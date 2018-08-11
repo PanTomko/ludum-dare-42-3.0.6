@@ -43,15 +43,14 @@ func make_decision( decision_name ):
 	get_parent().get_parent().get_node("Game/Player").active = false
 
 func set_arrow():
-	if arrow_pos != active_option:
-		var pos = get_node("HBoxContainer").get_child(active_option).get_global_rect().position
-		arrow_pos = active_option
-		pos += Vector2(-9, 9)
-		get_node("Arrow").position = pos
+	arrow_pos = active_option
+	var pos = get_node("HBoxContainer").get_child(active_option).get_global_rect().position
+	pos += Vector2(-9, 9)
+	get_node("Arrow").position = pos
 		
-		get_node("HBoxContainer").get_child(active_option).modulate = Color( "#bab83b" )
-		if active_option != previus_option:
-			get_node("HBoxContainer").get_child(previus_option).modulate = Color( "#ffffff" )
+	get_node("HBoxContainer").get_child(active_option).modulate = Color( "#bab83b" )
+	if active_option != previus_option:
+		get_node("HBoxContainer").get_child(previus_option).modulate = Color( "#ffffff" )
 
 func set_action( value ):
 	previus_option = active_option
@@ -89,7 +88,7 @@ func clear_decision( decision_name_siganl ):
 	for i in get_node("HBoxContainer").get_children():
 		i.queue_free()
 	
-	get_parent().get_parent().get_parent().get_node("Game/Player").active = false
+	get_parent().get_parent().get_node("Game/Player").active = true
 
 func _on_TimerHighlight_timeout():
 	get_node("Timer").stop()

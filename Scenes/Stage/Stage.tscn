@@ -1,27 +1,18 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Textures/map-v1.png" type="Texture" id=1]
 
 [node name="Stage" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+[node name="CollisionShapes" type="Node" parent="." index="0"]
 
-editor/display_folded = true
-position = Vector2( -292.282, 3.34039 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
+[node name="Background" type="Polygon2D" parent="." index="1"]
 
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D" index="0"]
-
-polygon = PoolVector2Array( 640.283, 250.151, 1124.1, 250.151, 1121.36, 148.757, 1168.67, 236.051, 1030, 500, 940, 380, 710, 480, 380, 170, 620, 100 )
+polygon = PoolVector2Array( -550, -150, -550, 560, 1210, 560, 1210, -150 )
 uv = PoolVector2Array(  )
-color = Color( 1, 1, 1, 1 )
+color = Color( 0, 0, 0, 1 )
 vertex_colors = PoolColorArray(  )
 offset = Vector2( 0, 0 )
 antialiased = false
@@ -31,17 +22,15 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="1"]
-
-build_mode = 0
-polygon = PoolVector2Array( 1123.96, 250.218, 1121.37, 148.568, 1168.63, 236.08, 1030, 500, 940, 380, 710, 480, 380, 170, 620, 100, 640, 250 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="SpawnPosition" type="Position2D" parent="." index="1"]
+[node name="SpawnPosition" type="Position2D" parent="." index="2"]
 
 position = Vector2( 577.53, 214.142 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="3"]
+
+position = Vector2( 330, 180 )
+texture = ExtResource( 1 )
 
 

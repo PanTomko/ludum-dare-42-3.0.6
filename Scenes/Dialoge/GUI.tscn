@@ -80,8 +80,8 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -113.0
-margin_bottom = -23.0
+margin_top = -68.0
+margin_bottom = -5.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -97,6 +97,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script = ExtResource( 5 )
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="FadeTimer" type="Timer" parent="Dialog" index="4"]
 
