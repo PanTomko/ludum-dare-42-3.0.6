@@ -15,4 +15,7 @@ func _ready():
 
 
 func _on_Door_body_shape_entered(body_id, body, body_shape, area_shape):
-	print("Cool" + str(body.name))
+		
+	if body.name == "Player" :
+		var game = get_parent().get_parent().get_parent()
+		game.game_won()

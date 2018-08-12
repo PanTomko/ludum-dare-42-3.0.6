@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Spawn.gd" type="Script" id=1]
+
+[node name="Spawn" type="Node2D"]
+
+script = ExtResource( 1 )
+id = null
+
+[node name="Next" type="Position2D" parent="." index="0"]
+
+position = Vector2( -14, -12 )
+
+[node name="End" type="Position2D" parent="." index="1"]
+
+position = Vector2( 12, -12 )
+
+

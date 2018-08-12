@@ -19,7 +19,7 @@ script = ExtResource( 3 )
 process_mode = 1
 wait_time = 1.2
 one_shot = false
-autostart = false
+autostart = true
 
 [connection signal="timeout" from="Jump" to="Move_2" method="_on_Jump_timeout"]
 

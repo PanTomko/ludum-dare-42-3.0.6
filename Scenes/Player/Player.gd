@@ -5,10 +5,10 @@ const UP = Vector2(0, -1)
 var speed = 260
 var motion = Vector2(0,0)
 var accumulate_motion = Vector2(0,0)
-var jump_strenght = 325
+var jump_strenght = 625
 
 # forces
-var gravity_force = Vector2(0,392)
+var gravity_force = Vector2(0,392*3)
 
 func _ready():
 	pass
@@ -20,11 +20,11 @@ func _physics_process(delta):
 	# movment control
 	if Input.is_action_pressed("ui_right"):
 		motion.x += speed
-		if get_node("AnimationPlayer").current_animation != "Walk_right":
+		if get_node("AnimationPlayer").current_animation != "Walk_right" and "Jump":
 			get_node("AnimationPlayer").play("Walk_right")
 	elif Input.is_action_pressed("ui_left"):
 		motion.x -= speed
-		if get_node("AnimationPlayer").current_animation != "Walk_left":
+		if get_node("AnimationPlayer").current_animation != "Walk_left" and "Jump":
 			get_node("AnimationPlayer").play("Walk_left")
 	else:
 		motion.x = 0

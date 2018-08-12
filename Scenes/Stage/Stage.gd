@@ -2,28 +2,27 @@ extends Node2D
 
 var player_node
 var GUI_node
+var spawns = Array()
+var id_spawn = 0
+var current_spawner
+var current_spawn = Vector2(0,0)
+var max_id_spawner
 
 # x-min y-max
 var map_size = Vector2()
 
 func _ready():
-#	player_node = get_parent().get_node("Player")
-	map_size.x = get_node("MinMax/Min").global_position.x
-	map_size.y = get_node("MinMax/Max").global_position.x
-	print("lul")
-#	GUI_node = get_parent().get_parent().get_node("GUI")
-#
-#	print(GUI_node.name)
-#	print(player_node.name)
-	pass
+	max_id_spawner = get_node( "Spawners" ).get_child_count()
+	set_spawn(0)
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _process(delta):
+	if current_spawn.x < get_parent().get_node("Player").position.x:
+		if max_id_spawner > id_spawn + 1:
+			print(id_spawn + 1)
+			set_spawn( id_spawn + 1 )
 
-func set_stage():
-	print("set")
-	map_size.x = get_node("MinMax/Min").global_position.x
-	map_size.y = get_node("MinMax/Max").global_position.x
-
+func set_spawn( id ):
+	id_spawn = id
+	current_spawner = get_node( "Spawners/Spawn" + str( id ) )
+	current_spawn.x = current_spawner.get_node("Next").position.x
+	current_spawner.spawn()

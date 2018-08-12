@@ -26,10 +26,14 @@ func _process(delta):
 			var parent = get_parent().get_parent()
 			parent.bring_game()
 			parent.remove_menu()
+		elif item_text == "OptionExit":
+			get_tree().quit()
 
 func set_highlight_item( value ):
 	if get_node("CenterContainer/MenuOptions").get_child_count() > value && value >= 0 :
 		if get_node("CenterContainer/MenuOptions").get_child( value ).visible :
+			
+			$AudioStreamPlayer.play()
 			
 			get_node("CenterContainer/MenuOptions").get_child( value ).modulate = Color( "#bab83b" )
 			get_node("CenterContainer/MenuOptions").get_child( selected_item_id ).modulate = Color( "#ffffff" )

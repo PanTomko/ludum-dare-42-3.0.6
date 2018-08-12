@@ -45,7 +45,7 @@ tracks/1/path = NodePath("Sprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -120,7 +120,7 @@ tracks/1/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 26.7808 )
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -146,9 +146,10 @@ blend_times = [  ]
 
 position = Vector2( 1, -2 )
 texture = ExtResource( 2 )
+flip_h = true
 vframes = 3
 hframes = 10
-frame = 29
+frame = 19
 _sections_unfolded = [ "Animation", "Offset", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
@@ -162,7 +163,7 @@ rotating = false
 current = true
 zoom = Vector2( 1, 1 )
 limit_left = -10000000
-limit_top = -1
+limit_top = 0
 limit_right = 10000000
 limit_bottom = 360
 limit_smoothed = false

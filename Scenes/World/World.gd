@@ -5,18 +5,22 @@ var game_node
 var GUI_node
 var menu_node
 var gameOver_node
+var winScreen_node
 
 func _ready():
 	menu_node = get_node("Menu")
 	remove_game()
+	remove_gameOver()
+	remove_winScreen()
 
-func _process(delta):
-	
-
-#		else:
-#			bring_game()
-#			remove_menu()
-	pass
+#func _process(delta):
+#
+#
+#
+##		else:
+##			bring_game()
+##			remove_menu()
+#	pass
 
 func remove_game():
 	game_node = get_node("Game")
@@ -43,6 +47,23 @@ func remove_gameOver():
 func bring_gameOver():
 	add_child( gameOver_node )
 
+func remove_winScreen():
+	winScreen_node = get_node("WinScreen")
+	remove_child( get_node("WinScreen") )
+
+func bring_winScreen():
+	add_child( winScreen_node )
+
 func game_over():
 	bring_gameOver()
 	remove_game()
+	reload_game()
+	
+func game_won():
+	bring_winScreen()
+	remove_game()
+	reload_game()
+
+func reload_game():
+	game_node = preload("res://Game/Game.tscn").instance()
+	GUI_node = preload("res://Scenes/Dialoge/GUI.tscn").instance()

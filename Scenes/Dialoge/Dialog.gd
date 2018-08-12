@@ -40,7 +40,6 @@ func _process(delta):
 # 
 func skip_line_animation():
 	$DialogLine2.text = $DialogLine2.text_to_show
-	print("spik")
 
 
 # Set next line
@@ -48,7 +47,6 @@ func next_line():
 	if !lines[current_lines].empty():
 		$DialogLine2.set_text_to_show( lines[current_lines].pop_front() ) # play next line
 		if lines[current_lines].empty():
-			$AutoLine.stop()
 			$DialogLine2.last_line = true
 		else:
 			$DialogLine2.last_line = false
@@ -89,10 +87,11 @@ func on_lines_ends( lines_name ):
 	plaing_lines = false
 	
 	match lines_name:
-		"wazon" :
+		"lul" :
 			pass
 			#play_lines( "conti" )
 		_:
+			print("done")
 			if plaing_lines == false:
 				fade_lines()
 
