@@ -4,7 +4,7 @@
 [ext_resource path="res://Textures/cats/cat-brown.png" type="Texture" id=2]
 [ext_resource path="res://Move.gd" type="Script" id=3]
 
-[node name="Cat" index="0" instance=ExtResource( 1 )]
+[node name="Cat" instance=ExtResource( 1 )]
 
 _sections_unfolded = [ "Linear" ]
 

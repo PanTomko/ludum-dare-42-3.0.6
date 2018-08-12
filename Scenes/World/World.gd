@@ -4,6 +4,7 @@ extends Node
 var game_node
 var GUI_node
 var menu_node
+var gameOver_node
 
 func _ready():
 	menu_node = get_node("Menu")
@@ -34,3 +35,14 @@ func remove_menu():
 func bring_menu( mode ):
 	menu_node.get_child(0).set_mode( mode )
 	add_child( menu_node )
+
+func remove_gameOver():
+	gameOver_node = get_node("GameOverScreen")
+	remove_child( get_node("GameOverScreen") )
+
+func bring_gameOver():
+	add_child( gameOver_node )
+
+func game_over():
+	bring_gameOver()
+	remove_game()

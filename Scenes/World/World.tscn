@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/World/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Menu/Menu.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Scenes/World/Game.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Stage/Stage_01.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/World/GameOverScreen.gd" type="Script" id=7]
+[ext_resource path="res://Resources/Dynamic-Font/munro_menu.tres" type="DynamicFont" id=8]
 
 [node name="World" type="Node"]
 
@@ -32,6 +34,7 @@ _sections_unfolded = [ "Material", "Rect", "Visibility" ]
 
 [node name="Menu" type="CanvasLayer" parent="." index="1"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -55,5 +58,43 @@ _sections_unfolded = [ "Visibility", "Z Index", "collision" ]
 [node name="Stage_01" parent="Game" index="1" instance=ExtResource( 6 )]
 
 script = null
+
+[node name="GameOverScreen" type="CenterContainer" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+script = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="GameOverScreen" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 260.0
+margin_top = 165.0
+margin_right = 380.0
+margin_bottom = 195.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 8 )
+text = "Game Over"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 

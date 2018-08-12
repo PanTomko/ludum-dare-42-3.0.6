@@ -20,10 +20,15 @@ func _physics_process(delta):
 	# movment control
 	if Input.is_action_pressed("ui_right"):
 		motion.x += speed
+		if get_node("AnimationPlayer").current_animation != "Walk_right":
+			get_node("AnimationPlayer").play("Walk_right")
 	elif Input.is_action_pressed("ui_left"):
 		motion.x -= speed
+		if get_node("AnimationPlayer").current_animation != "Walk_left":
+			get_node("AnimationPlayer").play("Walk_left")
 	else:
 		motion.x = 0
+		get_node("AnimationPlayer").play("Iddle")
 	
 	if is_on_ceiling():
 		accumulate_motion.y = 0
@@ -31,6 +36,7 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
+			get_node("AnimationPlayer").play("Jump")
 			accumulate_motion.y -= jump_strenght
 	
 	# applay motion and reset it

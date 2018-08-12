@@ -79,6 +79,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 3 )
+_sections_unfolded = [ "Collision" ]
 
 [node name="map-v2-left-padded-poo" type="Sprite" parent="GameOver" index="0"]
 
@@ -122,27 +123,51 @@ position = Vector2( 839, 164 )
 
 position = Vector2( 2000, 190 )
 
-[node name="Cat6" parent="." index="12" instance=ExtResource( 6 )]
+[node name="Cat12" parent="." index="12" instance=ExtResource( 6 )]
+
+position = Vector2( 2105, 190 )
+
+[node name="Cat13" parent="." index="13" instance=ExtResource( 6 )]
+
+position = Vector2( 2059, 132 )
+
+[node name="Cat14" parent="." index="14" instance=ExtResource( 6 )]
+
+position = Vector2( 2137, 132 )
+
+[node name="Cat15" parent="." index="15" instance=ExtResource( 6 )]
+
+position = Vector2( 2105, 82 )
+
+[node name="Cat16" parent="." index="16" instance=ExtResource( 6 )]
+
+position = Vector2( 1992, 60 )
+
+[node name="Cat17" parent="." index="17" instance=ExtResource( 6 )]
+
+position = Vector2( 1900, 132 )
+
+[node name="Cat6" parent="." index="18" instance=ExtResource( 6 )]
 
 position = Vector2( 2882, 126 )
 
-[node name="Cat7" parent="." index="13" instance=ExtResource( 6 )]
+[node name="Cat7" parent="." index="19" instance=ExtResource( 6 )]
 
 position = Vector2( 2515, 147 )
 
-[node name="Cat8" parent="." index="14" instance=ExtResource( 7 )]
+[node name="Cat8" parent="." index="20" instance=ExtResource( 7 )]
 
 position = Vector2( 1380, 196 )
 
-[node name="Cat9" parent="." index="15" instance=ExtResource( 7 )]
+[node name="Cat9" parent="." index="21" instance=ExtResource( 7 )]
 
 position = Vector2( 1706, 204 )
 
-[node name="Cat10" parent="." index="16" instance=ExtResource( 7 )]
+[node name="Cat10" parent="." index="22" instance=ExtResource( 7 )]
 
 position = Vector2( 2262, 204 )
 
-[node name="Cat11" parent="." index="17" instance=ExtResource( 7 )]
+[node name="Cat11" parent="." index="23" instance=ExtResource( 7 )]
 
 position = Vector2( 2709, 204 )
 

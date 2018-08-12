@@ -7,6 +7,9 @@ func _ready():
 	# Initialization here
 	pass
 
+func game_over():
+	get_node("CenterContainer").show()
+	get_node("Dialog").hide()
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
