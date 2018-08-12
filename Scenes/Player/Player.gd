@@ -12,10 +12,11 @@ func _ready():
 
 func set_stage( stage_name ) :
 	current_stage = get_parent().get_node( stage_name )
-	get_parent().get_node( stage_name ).set_stage()
+	#get_parent().get_node( stage_name ).set_stage()
 	
-	get_node("Camera2D").limit_left = current_stage.map_size.x
-	get_node("Camera2D").limit_right = current_stage.map_size.y
+	#get_node("Camera2D").limit_left = current_stage.map_size.x
+	#get_node("Camera2D").limit_right = current_stage.map_size.y
+	pass
 	#current_stage
 	
 
