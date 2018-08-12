@@ -11,6 +11,7 @@ _sections_unfolded = [ "Linear" ]
 [node name="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
+frame = 0
 
 [node name="Move" type="Node" parent="." index="2"]
 
@@ -22,6 +23,10 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = true
+
+[node name="AnimationPlayer" parent="." index="4"]
+
+_sections_unfolded = [ "Playback Options" ]
 
 [connection signal="timeout" from="Jump" to="Move" method="_on_Jump_timeout"]
 

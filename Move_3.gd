@@ -27,4 +27,8 @@ func _physics_process(delta):
 	if get_parent().is_on_floor():
 		accumulate_motion.y = 0
 	
+	
 	motion = Vector2(0,0)
+	if get_node("../AnimationPlayer").current_animation != "jump":
+		get_node("../AnimationPlayer").play( "jump" )
+	

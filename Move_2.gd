@@ -5,10 +5,10 @@ const UP = Vector2(0, -1)
 var speed = -150
 var motion = Vector2(0,0)
 var accumulate_motion = Vector2(0,0)
-var jump_strenght = 400
+var jump_strenght = 450
 
 # forces
-var gravity_force = Vector2(0,392)
+var gravity_force = Vector2(0,392*2)
 
 func _ready():
 	pass
@@ -22,7 +22,7 @@ func _physics_process(delta):
 		motion.y = 0
 	
 	# applay motion and reset it
-	get_parent().move_and_slide( motion + accumulate_motion, UP)
+	get_parent().move_and_collide( motion + accumulate_motion * delta)
 	
 	if get_parent().is_on_floor():
 		accumulate_motion.y = 0
@@ -30,5 +30,7 @@ func _physics_process(delta):
 	motion = Vector2(0,0)
 
 func _on_Jump_timeout():
-	if get_parent().is_on_floor():
-			accumulate_motion.y -= jump_strenght
+	get_node("../AnimationPlayer").play("jump")
+	#if get_parent().is_on_floor():
+	accumulate_motion.y = 0
+	accumulate_motion.y -= jump_strenght

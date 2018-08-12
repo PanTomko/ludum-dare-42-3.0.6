@@ -5,7 +5,7 @@ const UP = Vector2(0, -1)
 var speed = 260
 var motion = Vector2(0,0)
 var accumulate_motion = Vector2(0,0)
-var jump_strenght = 625
+var jump_strenght = 525
 
 # forces
 var gravity_force = Vector2(0,392*3)
