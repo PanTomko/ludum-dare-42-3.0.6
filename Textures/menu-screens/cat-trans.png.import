@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gran-sheet.png-58cac7d188ec2010b3d09aa9790815ec.stex"
+path="res://.import/cat-trans.png-5118074d5711e5dac03aeffd5b9fc7d9.stex"
 
 [deps]
 
-source_file="res://Textures/gran-sheet.png"
-dest_files=[ "res://.import/gran-sheet.png-58cac7d188ec2010b3d09aa9790815ec.stex" ]
+source_file="res://Textures/menu-screens/cat-trans.png"
+dest_files=[ "res://.import/cat-trans.png-5118074d5711e5dac03aeffd5b9fc7d9.stex" ]
 
 [params]
 

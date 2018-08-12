@@ -64,7 +64,7 @@ func play_lines( name_of_lines ):
 	active = true
 	
 	next_line()
-	modulate = Color("#ffffff")
+	modulate = Color("#ffd8d9ba")
 
 # Line from current line ended !
 func _on_DialogLine2_line_ended( is_last ):

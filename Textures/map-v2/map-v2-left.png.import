@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gran-sheet.png-58cac7d188ec2010b3d09aa9790815ec.stex"
+path="res://.import/map-v2-left.png-6e5cf5d52847f38879eaef0db68e28f1.stex"
 
 [deps]
 
-source_file="res://Textures/gran-sheet.png"
-dest_files=[ "res://.import/gran-sheet.png-58cac7d188ec2010b3d09aa9790815ec.stex" ]
+source_file="res://Textures/map-v2/map-v2-left.png"
+dest_files=[ "res://.import/map-v2-left.png-6e5cf5d52847f38879eaef0db68e28f1.stex" ]
 
 [params]
 
