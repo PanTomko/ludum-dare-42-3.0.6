@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/map-v2-left-poo.png-5f22b4930befe641f299f8639278ef21.stex"
+path="res://.import/cat-white.png-14086c93efd2a989b05c57f2579880de.stex"
 
 [deps]
 
-source_file="res://Textures/map-v2-left-poo.png"
-dest_files=[ "res://.import/map-v2-left-poo.png-5f22b4930befe641f299f8639278ef21.stex" ]
+source_file="res://Textures/cats/cat-white.png"
+dest_files=[ "res://.import/cat-white.png-14086c93efd2a989b05c57f2579880de.stex" ]
 
 [params]
 

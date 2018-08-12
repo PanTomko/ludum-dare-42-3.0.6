@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cat-red.png-07c057f7e920b77d0f7897ca164557c9.stex"
+path="res://.import/map-v2.png-40ac15c6ea82ea073d86559034f18c88.stex"
 
 [deps]
 
-source_file="res://Textures/cat-red.png"
-dest_files=[ "res://.import/cat-red.png-07c057f7e920b77d0f7897ca164557c9.stex" ]
+source_file="res://Textures/map-v2/map-v2.png"
+dest_files=[ "res://.import/map-v2.png-40ac15c6ea82ea073d86559034f18c88.stex" ]
 
 [params]
 
