@@ -50,7 +50,7 @@ script = ExtResource( 4 )
 
 position = Vector2( 205.104, 201.495 )
 z_index = 1
-_sections_unfolded = [ "Visibility", "Z Index" ]
+_sections_unfolded = [ "Visibility", "Z Index", "collision" ]
 
 [node name="Stage_01" parent="Game" index="1" instance=ExtResource( 6 )]
 

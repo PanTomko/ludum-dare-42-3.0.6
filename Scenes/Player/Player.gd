@@ -1,48 +1,42 @@
 extends KinematicBody2D
 
-# data
-export(float) var speed
-var movment = Vector2(0,0)
-var active = true
-var current_stage
+const UP = Vector2(0, -1)
+
+var speed = 260
+var motion = Vector2(0,0)
+var accumulate_motion = Vector2(0,0)
+var jump_strenght = 325
+
+# forces
+var gravity_force = Vector2(0,392)
 
 func _ready():
-	set_stage( "Stage_01" )
 	pass
-
-func set_stage( stage_name ) :
-	current_stage = get_parent().get_node( stage_name )
-	#get_parent().get_node( stage_name ).set_stage()
-	
-	#get_node("Camera2D").limit_left = current_stage.map_size.x
-	#get_node("Camera2D").limit_right = current_stage.map_size.y
-	pass
-	#current_stage
-	
 
 func _physics_process(delta):
+	# applay force that accumulate
+	accumulate_motion += gravity_force * delta
 	
-	# input
-	if active:
-		if Input.is_action_pressed("ui_left"):
-			movment.x -= speed * delta
-			
-			if $AnimationPlayer.current_animation != "Walk_left":
-				$AnimationPlayer.play("Walk_left")
-			
-		elif Input.is_action_pressed("ui_right"):
-			movment.x += speed * delta
-			
-			if $AnimationPlayer.current_animation != "Walk_right":
-				$AnimationPlayer.play("Walk_right")
+	# movment control
+	if Input.is_action_pressed("ui_right"):
+		motion.x += speed
+	elif Input.is_action_pressed("ui_left"):
+		motion.x -= speed
+	else:
+		motion.x = 0
 	
+	if is_on_ceiling():
+		accumulate_motion.y = 0
+		motion.y = 0
 	
-	if movment.x == 0 :
-		if $AnimationPlayer.current_animation != "Iddle":
-			$AnimationPlayer.play("Iddle")
-	# move
-	move_and_collide( movment )
+	if is_on_floor():
+		if Input.is_action_just_pressed("ui_up"):
+			accumulate_motion.y -= jump_strenght
 	
-	# clear 
-	movment.x = 0
-	movment.y = 0
+	# applay motion and reset it
+	move_and_slide( motion + accumulate_motion, UP)
+	
+	if is_on_floor():
+		accumulate_motion.y = 0
+	
+	motion = Vector2(0,0)

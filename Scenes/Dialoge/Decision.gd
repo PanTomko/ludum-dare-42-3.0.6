@@ -40,7 +40,7 @@ func make_decision( decision_name ):
 	
 	get_node("Arrow").visible = true
 	
-	get_parent().get_parent().get_node("Game/Player").active = false
+	#get_parent().get_parent().get_node("Game/Player").active = false
 
 func set_arrow():
 	arrow_pos = active_option

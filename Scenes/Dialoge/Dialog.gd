@@ -3,9 +3,9 @@ extends Control
 # Lines we can display
 var lines = {
 	"wazon" : [ 
-		"line to tell 1 ",
-	 	"line to tell 2",
-	 	"line to tell 3"
+		"Runnnnnnnnnn.",
+	 	"Tyr to avoid those crqazy ass cats.",
+	 	"Go to fast to doors on the other side of room !"
 	],
 	
 	"conti" : [ 
@@ -75,7 +75,7 @@ func _on_DialogLine2_line_ended( is_last ):
 		
 		# make option if need
 		match current_lines:
-			"wazon" :
+			"lul" :
 				$AutoLine.stop()
 				get_node("../Decision").make_decision( current_lines )
 

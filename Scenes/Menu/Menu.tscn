@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Menu/Menu.gd" type="Script" id=1]
-[ext_resource path="res://Textures/menu-screens/grey-gran-cat.png" type="Texture" id=2]
+[ext_resource path="res://Textures/menu-screens/grey-gran-trans-cat-trans.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Dynamic-Font/munro_menu.tres" type="DynamicFont" id=3]
 
-[node name="Menu" type="Control" index="0"]
+[node name="Menu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0

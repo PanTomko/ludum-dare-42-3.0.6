@@ -26,3 +26,4 @@ func set_stage():
 	print("set")
 	map_size.x = get_node("MinMax/Min").global_position.x
 	map_size.y = get_node("MinMax/Max").global_position.x
+
