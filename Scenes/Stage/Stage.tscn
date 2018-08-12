@@ -1,12 +1,24 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Textures/map-v1.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Stage/Stage.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Stage/Door.gd" type="Script" id=2]
 
-[node name="Stage" type="Node2D"]
+[sub_resource type="StreamTexture" id=1]
 
+flags = 0
+load_path = "res://.import/map-v1.png-438fc99b11dec8af2ad0aa034fba62c2.stex"
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 24, 44 )
+
+[node name="Stage" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShapes" type="Node" parent="." index="0"]
+[node name="CollisionShapes" type="Node2D" parent="." index="0"]
 
 [node name="Background" type="Polygon2D" parent="." index="1"]
 
@@ -31,6 +43,32 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sprite" type="Sprite" parent="." index="3"]
 
 position = Vector2( 330, 180 )
-texture = ExtResource( 1 )
+texture = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Door" type="Area2D" parent="." index="4"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="MinMax" type="Node" parent="." index="5"]
+
+[node name="Min" type="Position2D" parent="MinMax" index="0"]
+
+[node name="Max" type="Position2D" parent="MinMax" index="1"]
+
+position = Vector2( 970, 162 )
+
+[connection signal="body_shape_entered" from="Door" to="Door" method="_on_Door_body_shape_entered"]
 
 

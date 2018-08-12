@@ -1,13 +1,23 @@
 extends KinematicBody2D
 
+# data
 export(float) var speed
 var movment = Vector2(0,0)
 var active = true
+var current_stage
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
+	set_stage( "Stage_01" )
 	pass
+
+func set_stage( stage_name ) :
+	current_stage = get_parent().get_node( stage_name )
+	get_parent().get_node( stage_name ).set_stage()
+	
+	get_node("Camera2D").limit_left = current_stage.map_size.x
+	get_node("Camera2D").limit_right = current_stage.map_size.y
+	#current_stage
+	
 
 func _physics_process(delta):
 	

@@ -54,4 +54,6 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Stage_01" parent="Game" index="1" instance=ExtResource( 6 )]
 
+script = null
+
 
