@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Textures/gran-sheet.png" type="Texture" id=2]
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 
 resource_name = "Jump"
 length = 0.9
@@ -53,9 +53,8 @@ tracks/1/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource_name = "Walk_left"
 length = 0.9
 loop = true
 step = 0.1
@@ -84,7 +83,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
 resource_name = "Walk_right"
 length = 0.9
@@ -115,10 +114,15 @@ tracks/1/keys = {
 "values": [ false, false ]
 }
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 26.7808 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 19.3767, 15.3499 )
 
 [node name="Player" type="KinematicBody2D"]
 
@@ -137,9 +141,9 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Iddle = SubResource( 1 )
-anims/Jump = SubResource( 3 )
-anims/Walk_left = SubResource( 2 )
-anims/Walk_right = SubResource( 5 )
+anims/Jump = SubResource( 2 )
+anims/Walk_left = SubResource( 3 )
+anims/Walk_right = SubResource( 4 )
 blend_times = [  ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
@@ -154,7 +158,8 @@ _sections_unfolded = [ "Animation", "Offset", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-shape = SubResource( 4 )
+position = Vector2( 4.72026, 3.14684 )
+shape = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 
@@ -181,5 +186,10 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Limit", "Smoothing" ]
+
+[node name="CollisionShapeCat" type="CollisionShape2D" parent="." index="4"]
+
+shape = SubResource( 6 )
+disabled = true
 
 

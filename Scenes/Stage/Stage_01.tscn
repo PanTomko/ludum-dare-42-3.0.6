@@ -27,7 +27,7 @@ extents = Vector2( 5796, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 224, 131 )
 
-[node name="Stage_01" instance=ExtResource( 1 )]
+[node name="Stage_01" index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 3, -6 )
 
@@ -152,7 +152,7 @@ texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" parent="Door" index="1"]
 
-position = Vector2( 50, -2 )
+position = Vector2( 107, -47 )
 
 [node name="GameOver" type="Area2D" parent="." index="5"]
 

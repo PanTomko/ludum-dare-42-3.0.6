@@ -7,10 +7,12 @@ var menu_node
 var gameOver_node
 var winScreen_node
 var credit_node
+var game_won_state = true
 
 func _ready():
 	menu_node = get_node("Menu")
 	remove_game()
+	reload_game()
 	remove_gameOver()
 	remove_winScreen()
 
@@ -70,6 +72,9 @@ func game_over():
 	get_node("GameOverScreen/AnimationPlayer").play("Show")
 
 func game_won():
+	if !game_won_state:
+		menu_node.get_node("Menu/CenterContainer/MenuOptions/OptionNewGame").text += "++"
+	game_won_state = true
 	bring_winScreen()
 	remove_game()
 	reload_game()
@@ -78,3 +83,9 @@ func game_won():
 func reload_game():
 	game_node = preload("res://Game/Game.tscn").instance()
 	GUI_node = preload("res://Scenes/Dialoge/GUI.tscn").instance()
+	if game_won_state:
+		game_node.get_node("Player/Sprite").texture = preload("res://Textures/cats/gran-cat.png")
+		game_node.get_node("Player/Sprite").update()
+		game_node.get_node("Player").speed = 600
+		game_node.get_node("Player/CollisionShapeCat").disabled = false
+		game_node.get_node("Player/CollisionShape2D").disabled = true
