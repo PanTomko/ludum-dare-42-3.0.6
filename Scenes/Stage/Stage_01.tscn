@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Stage/Stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/map-v2/map-v2-middle.png" type="Texture" id=2]
@@ -6,16 +6,18 @@
 [ext_resource path="res://Textures/bench.png" type="Texture" id=4]
 [ext_resource path="res://Textures/chair.png" type="Texture" id=5]
 [ext_resource path="res://Textures/creation-of-cat-picture.png" type="Texture" id=6]
-[ext_resource path="res://Textures/map-v2/map-v2-right.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Stage/GameOver.gd" type="Script" id=8]
-[ext_resource path="res://Textures/cats/supremekitty.png" type="Texture" id=9]
-[ext_resource path="res://Textures/map-v2/map-v2-left-padded-poo.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/Spawns/Spawn.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Cats/Cat.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Cats/Cat_red.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Cats/Cat_brown.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Cats/Cat_fly.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Cats/Cat_big.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Textures/rug.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/delete_this_later/wall-fixture.png" type="Texture" id=8]
+[ext_resource path="res://Textures/map-v2/map-v2-right.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Stage/GameOver.gd" type="Script" id=10]
+[ext_resource path="res://Textures/cats/supremekitty.png" type="Texture" id=11]
+[ext_resource path="res://Textures/map-v2/map-v2-left-padded-poo.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Spawns/Spawn.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Cats/Cat.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Cats/Cat_red.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Cats/Cat_brown.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Cats/Cat_fly.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Cats/Cat_big.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -141,6 +143,71 @@ texture = ExtResource( 5 )
 position = Vector2( 5859, 126 )
 texture = ExtResource( 5 )
 
+[node name="rug" type="Sprite" parent="Sprite" index="9"]
+
+position = Vector2( 8168, 166 )
+texture = ExtResource( 7 )
+
+[node name="rug" type="Sprite" parent="Sprite/rug" index="0"]
+
+position = Vector2( -6871, 2 )
+texture = ExtResource( 7 )
+
+[node name="rug" type="Sprite" parent="Sprite/rug/rug" index="0"]
+
+position = Vector2( -913, 0 )
+texture = ExtResource( 7 )
+
+[node name="wall-fixture" type="Sprite" parent="Sprite" index="10"]
+
+position = Vector2( 466, 77 )
+texture = ExtResource( 8 )
+
+[node name="wall-fixture2" type="Sprite" parent="Sprite" index="11"]
+
+position = Vector2( 480, 77 )
+texture = ExtResource( 8 )
+
+[node name="wall-fixture3" type="Sprite" parent="Sprite" index="12"]
+
+position = Vector2( 494, 77 )
+texture = ExtResource( 8 )
+
+[node name="wall-fixture4" type="Sprite" parent="Sprite" index="13"]
+
+position = Vector2( 508, 77 )
+texture = ExtResource( 8 )
+
+[node name="wall-fixture5" type="Sprite" parent="Sprite" index="14"]
+
+position = Vector2( 522, 77 )
+texture = ExtResource( 8 )
+
+[node name="wall-fixture6" type="Sprite" parent="Sprite" index="15"]
+
+position = Vector2( 5888, 84 )
+texture = ExtResource( 8 )
+
+[node name="wall-fixture7" type="Sprite" parent="Sprite" index="16"]
+
+position = Vector2( 5902, 84 )
+texture = ExtResource( 8 )
+
+[node name="wall-fixture8" type="Sprite" parent="Sprite" index="17"]
+
+position = Vector2( 5916, 84 )
+texture = ExtResource( 8 )
+
+[node name="wall-fixture9" type="Sprite" parent="Sprite" index="18"]
+
+position = Vector2( 5931, 84 )
+texture = ExtResource( 8 )
+
+[node name="rug" type="Sprite" parent="Sprite/wall-fixture9" index="0"]
+
+position = Vector2( -116, 86 )
+texture = ExtResource( 7 )
+
 [node name="Door" parent="." index="4"]
 
 position = Vector2( 9784, 182 )
@@ -148,7 +215,7 @@ position = Vector2( 9784, 182 )
 [node name="map-v2-right" type="Sprite" parent="Door" index="0"]
 
 position = Vector2( 87, -26 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" parent="Door" index="1"]
 
@@ -165,7 +232,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 8 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameOver" index="0"]
@@ -177,7 +244,7 @@ shape = SubResource( 2 )
 
 position = Vector2( 514, 7 )
 z_index = 6
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 offset = Vector2( 150, -4 )
 flip_h = true
 _sections_unfolded = [ "Animation", "Offset", "Z Index" ]
@@ -186,7 +253,7 @@ _sections_unfolded = [ "Animation", "Offset", "Z Index" ]
 
 position = Vector2( -825, 158 )
 z_index = 4
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="MinMax" parent="." index="7"]
@@ -205,7 +272,7 @@ position = Vector2( 970, 168 )
 
 [node name="Spawners" type="Node" parent="." index="8"]
 
-[node name="Spawn0" parent="Spawners" index="0" instance=ExtResource( 11 )]
+[node name="Spawn0" parent="Spawners" index="0" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
@@ -215,93 +282,93 @@ id = 0
 
 position = Vector2( 1445, 169 )
 
-[node name="Cat" parent="Spawners/Spawn0" index="1" instance=ExtResource( 12 )]
+[node name="Cat" parent="Spawners/Spawn0" index="1" instance=ExtResource( 14 )]
 
 position = Vector2( 325, 203 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat2" parent="Spawners/Spawn0" index="2" instance=ExtResource( 12 )]
+[node name="Cat2" parent="Spawners/Spawn0" index="2" instance=ExtResource( 14 )]
 
 position = Vector2( 511, 148 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat3" parent="Spawners/Spawn0" index="3" instance=ExtResource( 12 )]
+[node name="Cat3" parent="Spawners/Spawn0" index="3" instance=ExtResource( 14 )]
 
 position = Vector2( 511, 204 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat4" parent="Spawners/Spawn0" index="4" instance=ExtResource( 12 )]
+[node name="Cat4" parent="Spawners/Spawn0" index="4" instance=ExtResource( 14 )]
 
 position = Vector2( 746, 204 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat6" parent="Spawners/Spawn0" index="5" instance=ExtResource( 12 )]
+[node name="Cat6" parent="Spawners/Spawn0" index="5" instance=ExtResource( 14 )]
 
 position = Vector2( 971, 204 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat8" parent="Spawners/Spawn0" index="6" instance=ExtResource( 12 )]
+[node name="Cat8" parent="Spawners/Spawn0" index="6" instance=ExtResource( 14 )]
 
 position = Vector2( 969.981, 85.0316 )
 rotation = -3.14258
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat7" parent="Spawners/Spawn0" index="7" instance=ExtResource( 12 )]
+[node name="Cat7" parent="Spawners/Spawn0" index="7" instance=ExtResource( 14 )]
 
 position = Vector2( 1349, 205 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat9" parent="Spawners/Spawn0" index="8" instance=ExtResource( 12 )]
+[node name="Cat9" parent="Spawners/Spawn0" index="8" instance=ExtResource( 14 )]
 
 position = Vector2( 1381, 178 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat10" parent="Spawners/Spawn0" index="9" instance=ExtResource( 12 )]
+[node name="Cat10" parent="Spawners/Spawn0" index="9" instance=ExtResource( 14 )]
 
 position = Vector2( 1413, 148 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat11" parent="Spawners/Spawn0" index="10" instance=ExtResource( 12 )]
+[node name="Cat11" parent="Spawners/Spawn0" index="10" instance=ExtResource( 14 )]
 
 position = Vector2( 1445, 116 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat12" parent="Spawners/Spawn0" index="11" instance=ExtResource( 12 )]
+[node name="Cat12" parent="Spawners/Spawn0" index="11" instance=ExtResource( 14 )]
 
 position = Vector2( 1469, 148 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat16" parent="Spawners/Spawn0" index="12" instance=ExtResource( 12 )]
+[node name="Cat16" parent="Spawners/Spawn0" index="12" instance=ExtResource( 14 )]
 
 position = Vector2( 1445, 86 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat17" parent="Spawners/Spawn0" index="13" instance=ExtResource( 12 )]
+[node name="Cat17" parent="Spawners/Spawn0" index="13" instance=ExtResource( 14 )]
 
 position = Vector2( 1751, 169 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat18" parent="Spawners/Spawn0" index="14" instance=ExtResource( 12 )]
+[node name="Cat18" parent="Spawners/Spawn0" index="14" instance=ExtResource( 14 )]
 
 position = Vector2( 1751, 203 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat13" parent="Spawners/Spawn0" index="15" instance=ExtResource( 12 )]
+[node name="Cat13" parent="Spawners/Spawn0" index="15" instance=ExtResource( 14 )]
 
 position = Vector2( 1512, 175 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat14" parent="Spawners/Spawn0" index="16" instance=ExtResource( 12 )]
+[node name="Cat14" parent="Spawners/Spawn0" index="16" instance=ExtResource( 14 )]
 
 position = Vector2( 1533, 210 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat15" parent="Spawners/Spawn0" index="17" instance=ExtResource( 12 )]
+[node name="Cat15" parent="Spawners/Spawn0" index="17" instance=ExtResource( 14 )]
 
 position = Vector2( 1750, 137 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Cat5" parent="Spawners/Spawn0" index="18" instance=ExtResource( 12 )]
+[node name="Cat5" parent="Spawners/Spawn0" index="18" instance=ExtResource( 14 )]
 
 position = Vector2( 511, 180 )
 _sections_unfolded = [ "Transform" ]
@@ -310,7 +377,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 2080, 148 )
 
-[node name="Spawn1" parent="Spawners" index="1" instance=ExtResource( 11 )]
+[node name="Spawn1" parent="Spawners" index="1" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
@@ -324,53 +391,53 @@ position = Vector2( 2718, 148 )
 
 position = Vector2( 3625, 138 )
 
-[node name="Cat" parent="Spawners/Spawn1" index="2" instance=ExtResource( 13 )]
+[node name="Cat" parent="Spawners/Spawn1" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( 2082, 161 )
 
-[node name="Cat2" parent="Spawners/Spawn1" index="3" instance=ExtResource( 13 )]
+[node name="Cat2" parent="Spawners/Spawn1" index="3" instance=ExtResource( 15 )]
 
 position = Vector2( 2360, 201 )
 
-[node name="Cat3" parent="Spawners/Spawn1" index="4" instance=ExtResource( 13 )]
+[node name="Cat3" parent="Spawners/Spawn1" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( 2492, 201 )
 
-[node name="Cat4" parent="Spawners/Spawn1" index="5" instance=ExtResource( 13 )]
+[node name="Cat4" parent="Spawners/Spawn1" index="5" instance=ExtResource( 15 )]
 
 position = Vector2( 2842, 201 )
 
-[node name="Cat5" parent="Spawners/Spawn1" index="6" instance=ExtResource( 13 )]
+[node name="Cat5" parent="Spawners/Spawn1" index="6" instance=ExtResource( 15 )]
 
 position = Vector2( 2842, 167 )
 
-[node name="Cat6" parent="Spawners/Spawn1" index="7" instance=ExtResource( 13 )]
+[node name="Cat6" parent="Spawners/Spawn1" index="7" instance=ExtResource( 15 )]
 
 position = Vector2( 2842, 129 )
 
-[node name="Cat7" parent="Spawners/Spawn1" index="8" instance=ExtResource( 12 )]
+[node name="Cat7" parent="Spawners/Spawn1" index="8" instance=ExtResource( 14 )]
 
 position = Vector2( 2977, 205 )
 
-[node name="Cat9" parent="Spawners/Spawn1" index="9" instance=ExtResource( 12 )]
+[node name="Cat9" parent="Spawners/Spawn1" index="9" instance=ExtResource( 14 )]
 
 position = Vector2( 3185, 204 )
 
-[node name="Cat10" parent="Spawners/Spawn1" index="10" instance=ExtResource( 12 )]
+[node name="Cat10" parent="Spawners/Spawn1" index="10" instance=ExtResource( 14 )]
 
 position = Vector2( 3298.63, 93.2343 )
 rotation = 3.14185
 
-[node name="Cat11" parent="Spawners/Spawn1" index="11" instance=ExtResource( 12 )]
+[node name="Cat11" parent="Spawners/Spawn1" index="11" instance=ExtResource( 14 )]
 
 position = Vector2( 3486.87, 92.5027 )
 rotation = 3.14185
 
-[node name="Cat8" parent="Spawners/Spawn1" index="12" instance=ExtResource( 12 )]
+[node name="Cat8" parent="Spawners/Spawn1" index="12" instance=ExtResource( 14 )]
 
 position = Vector2( 2082, 204 )
 
-[node name="Spawn2" parent="Spawners" index="2" instance=ExtResource( 11 )]
+[node name="Spawn2" parent="Spawners" index="2" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
@@ -384,63 +451,63 @@ position = Vector2( 4140, 109 )
 
 position = Vector2( 4601, 146 )
 
-[node name="Cat" parent="Spawners/Spawn2" index="2" instance=ExtResource( 14 )]
+[node name="Cat" parent="Spawners/Spawn2" index="2" instance=ExtResource( 16 )]
 
 position = Vector2( 3415, 201 )
 _sections_unfolded = [ "Linear", "Transform" ]
 
-[node name="Cat2" parent="Spawners/Spawn2" index="3" instance=ExtResource( 14 )]
+[node name="Cat2" parent="Spawners/Spawn2" index="3" instance=ExtResource( 16 )]
 
 position = Vector2( 3476, 201 )
 _sections_unfolded = [ "Linear", "Transform" ]
 
-[node name="Cat3" parent="Spawners/Spawn2" index="4" instance=ExtResource( 14 )]
+[node name="Cat3" parent="Spawners/Spawn2" index="4" instance=ExtResource( 16 )]
 
 position = Vector2( 3476, 167 )
 _sections_unfolded = [ "Linear", "Transform" ]
 
-[node name="Cat4" parent="Spawners/Spawn2" index="5" instance=ExtResource( 14 )]
+[node name="Cat4" parent="Spawners/Spawn2" index="5" instance=ExtResource( 16 )]
 
 position = Vector2( 3416, 167 )
 _sections_unfolded = [ "Linear", "Transform" ]
 
-[node name="Cat14" parent="Spawners/Spawn2" index="6" instance=ExtResource( 14 )]
+[node name="Cat14" parent="Spawners/Spawn2" index="6" instance=ExtResource( 16 )]
 
 position = Vector2( 4084, 135 )
 _sections_unfolded = [ "Linear", "Transform" ]
 
-[node name="Cat7" parent="Spawners/Spawn2" index="7" instance=ExtResource( 14 )]
+[node name="Cat7" parent="Spawners/Spawn2" index="7" instance=ExtResource( 16 )]
 
 position = Vector2( 3732, 181 )
 _sections_unfolded = [ "Linear", "Transform" ]
 
-[node name="Cat8" parent="Spawners/Spawn2" index="8" instance=ExtResource( 14 )]
+[node name="Cat8" parent="Spawners/Spawn2" index="8" instance=ExtResource( 16 )]
 
 position = Vector2( 3946, 178 )
 _sections_unfolded = [ "Linear", "Transform" ]
 
-[node name="Cat9" parent="Spawners/Spawn2" index="9" instance=ExtResource( 14 )]
+[node name="Cat9" parent="Spawners/Spawn2" index="9" instance=ExtResource( 16 )]
 
 position = Vector2( 4212, 158 )
 _sections_unfolded = [ "Linear", "Transform" ]
 
-[node name="Cat10" parent="Spawners/Spawn2" index="10" instance=ExtResource( 13 )]
+[node name="Cat10" parent="Spawners/Spawn2" index="10" instance=ExtResource( 15 )]
 
 position = Vector2( 4052, 182 )
 
-[node name="Cat11" parent="Spawners/Spawn2" index="11" instance=ExtResource( 13 )]
+[node name="Cat11" parent="Spawners/Spawn2" index="11" instance=ExtResource( 15 )]
 
 position = Vector2( 3615, 193 )
 
-[node name="Cat12" parent="Spawners/Spawn2" index="12" instance=ExtResource( 13 )]
+[node name="Cat12" parent="Spawners/Spawn2" index="12" instance=ExtResource( 15 )]
 
 position = Vector2( 4422, 191 )
 
-[node name="Cat13" parent="Spawners/Spawn2" index="13" instance=ExtResource( 13 )]
+[node name="Cat13" parent="Spawners/Spawn2" index="13" instance=ExtResource( 15 )]
 
 position = Vector2( 4569, 181 )
 
-[node name="Spawn3" parent="Spawners" index="3" instance=ExtResource( 11 )]
+[node name="Spawn3" parent="Spawners" index="3" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 id = 3
@@ -453,147 +520,147 @@ position = Vector2( 6084, 105 )
 
 position = Vector2( 6900, 132 )
 
-[node name="Cat" parent="Spawners/Spawn3" index="2" instance=ExtResource( 15 )]
+[node name="Cat" parent="Spawners/Spawn3" index="2" instance=ExtResource( 17 )]
 
 position = Vector2( 5235, 188 )
 
-[node name="Cat30" parent="Spawners/Spawn3" index="3" instance=ExtResource( 15 )]
+[node name="Cat30" parent="Spawners/Spawn3" index="3" instance=ExtResource( 17 )]
 
 position = Vector2( 7017, 179 )
 
-[node name="Cat2" parent="Spawners/Spawn3" index="4" instance=ExtResource( 15 )]
+[node name="Cat2" parent="Spawners/Spawn3" index="4" instance=ExtResource( 17 )]
 
 position = Vector2( 5100, 127 )
 
-[node name="Cat33" parent="Spawners/Spawn3" index="5" instance=ExtResource( 15 )]
+[node name="Cat33" parent="Spawners/Spawn3" index="5" instance=ExtResource( 17 )]
 
 position = Vector2( 6882, 118 )
 
-[node name="Cat3" parent="Spawners/Spawn3" index="6" instance=ExtResource( 15 )]
+[node name="Cat3" parent="Spawners/Spawn3" index="6" instance=ExtResource( 17 )]
 
 position = Vector2( 5779, 184 )
 
-[node name="Cat35" parent="Spawners/Spawn3" index="7" instance=ExtResource( 15 )]
+[node name="Cat35" parent="Spawners/Spawn3" index="7" instance=ExtResource( 17 )]
 
 position = Vector2( 7561, 175 )
 
-[node name="Cat13" parent="Spawners/Spawn3" index="8" instance=ExtResource( 15 )]
+[node name="Cat13" parent="Spawners/Spawn3" index="8" instance=ExtResource( 17 )]
 
 position = Vector2( 6130, 203 )
 
-[node name="Cat14" parent="Spawners/Spawn3" index="9" instance=ExtResource( 15 )]
+[node name="Cat14" parent="Spawners/Spawn3" index="9" instance=ExtResource( 17 )]
 
 position = Vector2( 6130, 164 )
 
-[node name="Cat17" parent="Spawners/Spawn3" index="10" instance=ExtResource( 15 )]
+[node name="Cat17" parent="Spawners/Spawn3" index="10" instance=ExtResource( 17 )]
 
 position = Vector2( 6197, 164 )
 
-[node name="Cat18" parent="Spawners/Spawn3" index="11" instance=ExtResource( 15 )]
+[node name="Cat18" parent="Spawners/Spawn3" index="11" instance=ExtResource( 17 )]
 
 position = Vector2( 6199, 201 )
 
-[node name="Cat19" parent="Spawners/Spawn3" index="12" instance=ExtResource( 15 )]
+[node name="Cat19" parent="Spawners/Spawn3" index="12" instance=ExtResource( 17 )]
 
 position = Vector2( 6261, 201 )
 
-[node name="Cat20" parent="Spawners/Spawn3" index="13" instance=ExtResource( 15 )]
+[node name="Cat20" parent="Spawners/Spawn3" index="13" instance=ExtResource( 17 )]
 
 position = Vector2( 6261, 166 )
 
-[node name="Cat22" parent="Spawners/Spawn3" index="14" instance=ExtResource( 15 )]
+[node name="Cat22" parent="Spawners/Spawn3" index="14" instance=ExtResource( 17 )]
 
 position = Vector2( 6423, 46 )
 
-[node name="Cat23" parent="Spawners/Spawn3" index="15" instance=ExtResource( 15 )]
+[node name="Cat23" parent="Spawners/Spawn3" index="15" instance=ExtResource( 17 )]
 
 position = Vector2( 6499, 79 )
 
-[node name="Cat24" parent="Spawners/Spawn3" index="16" instance=ExtResource( 15 )]
+[node name="Cat24" parent="Spawners/Spawn3" index="16" instance=ExtResource( 17 )]
 
 position = Vector2( 6422, 9 )
 
-[node name="Cat25" parent="Spawners/Spawn3" index="17" instance=ExtResource( 15 )]
+[node name="Cat25" parent="Spawners/Spawn3" index="17" instance=ExtResource( 17 )]
 
 position = Vector2( 6422, -28 )
 
-[node name="Cat26" parent="Spawners/Spawn3" index="18" instance=ExtResource( 15 )]
+[node name="Cat26" parent="Spawners/Spawn3" index="18" instance=ExtResource( 17 )]
 
 position = Vector2( 6518, 197 )
 
-[node name="Cat27" parent="Spawners/Spawn3" index="19" instance=ExtResource( 15 )]
+[node name="Cat27" parent="Spawners/Spawn3" index="19" instance=ExtResource( 17 )]
 
 position = Vector2( 6583, 198 )
 
-[node name="Cat28" parent="Spawners/Spawn3" index="20" instance=ExtResource( 15 )]
+[node name="Cat28" parent="Spawners/Spawn3" index="20" instance=ExtResource( 17 )]
 
 position = Vector2( 6586, 74 )
 
-[node name="Cat29" parent="Spawners/Spawn3" index="21" instance=ExtResource( 15 )]
+[node name="Cat29" parent="Spawners/Spawn3" index="21" instance=ExtResource( 17 )]
 
 position = Vector2( 6736, 113 )
 
-[node name="Cat31" parent="Spawners/Spawn3" index="22" instance=ExtResource( 15 )]
+[node name="Cat31" parent="Spawners/Spawn3" index="22" instance=ExtResource( 17 )]
 
 position = Vector2( 6675, 77 )
 
-[node name="Cat32" parent="Spawners/Spawn3" index="23" instance=ExtResource( 15 )]
+[node name="Cat32" parent="Spawners/Spawn3" index="23" instance=ExtResource( 17 )]
 
 position = Vector2( 6859, 109 )
 
-[node name="Cat34" parent="Spawners/Spawn3" index="24" instance=ExtResource( 15 )]
+[node name="Cat34" parent="Spawners/Spawn3" index="24" instance=ExtResource( 17 )]
 
 position = Vector2( 6798, 73 )
 
-[node name="Cat4" parent="Spawners/Spawn3" index="25" instance=ExtResource( 15 )]
+[node name="Cat4" parent="Spawners/Spawn3" index="25" instance=ExtResource( 17 )]
 
 position = Vector2( 5360, 116 )
 
-[node name="Cat16" parent="Spawners/Spawn3" index="26" instance=ExtResource( 15 )]
+[node name="Cat16" parent="Spawners/Spawn3" index="26" instance=ExtResource( 17 )]
 
 position = Vector2( 7142, 107 )
 
-[node name="Cat5" parent="Spawners/Spawn3" index="27" instance=ExtResource( 15 )]
+[node name="Cat5" parent="Spawners/Spawn3" index="27" instance=ExtResource( 17 )]
 
 position = Vector2( 5640, 115 )
 
-[node name="Cat15" parent="Spawners/Spawn3" index="28" instance=ExtResource( 15 )]
+[node name="Cat15" parent="Spawners/Spawn3" index="28" instance=ExtResource( 17 )]
 
 position = Vector2( 7422, 106 )
 
-[node name="Cat6" parent="Spawners/Spawn3" index="29" instance=ExtResource( 15 )]
+[node name="Cat6" parent="Spawners/Spawn3" index="29" instance=ExtResource( 17 )]
 
 position = Vector2( 5495, 185 )
 
-[node name="Cat21" parent="Spawners/Spawn3" index="30" instance=ExtResource( 15 )]
+[node name="Cat21" parent="Spawners/Spawn3" index="30" instance=ExtResource( 17 )]
 
 position = Vector2( 7277, 176 )
 
-[node name="Cat7" parent="Spawners/Spawn3" index="31" instance=ExtResource( 14 )]
+[node name="Cat7" parent="Spawners/Spawn3" index="31" instance=ExtResource( 16 )]
 
 position = Vector2( 5780, 146 )
 
-[node name="Cat8" parent="Spawners/Spawn3" index="32" instance=ExtResource( 14 )]
+[node name="Cat8" parent="Spawners/Spawn3" index="32" instance=ExtResource( 16 )]
 
 position = Vector2( 5638, 74 )
 
-[node name="Cat9" parent="Spawners/Spawn3" index="33" instance=ExtResource( 14 )]
+[node name="Cat9" parent="Spawners/Spawn3" index="33" instance=ExtResource( 16 )]
 
 position = Vector2( 5499, 141 )
 
-[node name="Cat10" parent="Spawners/Spawn3" index="34" instance=ExtResource( 14 )]
+[node name="Cat10" parent="Spawners/Spawn3" index="34" instance=ExtResource( 16 )]
 
 position = Vector2( 4929, 86 )
 
-[node name="Cat11" parent="Spawners/Spawn3" index="35" instance=ExtResource( 14 )]
+[node name="Cat11" parent="Spawners/Spawn3" index="35" instance=ExtResource( 16 )]
 
 position = Vector2( 5004, 84 )
 
-[node name="Cat12" parent="Spawners/Spawn3" index="36" instance=ExtResource( 14 )]
+[node name="Cat12" parent="Spawners/Spawn3" index="36" instance=ExtResource( 16 )]
 
 position = Vector2( 5100, 83 )
 
-[node name="Spawn4" parent="Spawners" index="4" instance=ExtResource( 11 )]
+[node name="Spawn4" parent="Spawners" index="4" instance=ExtResource( 13 )]
 
 id = 4
 
@@ -605,39 +672,39 @@ position = Vector2( 7608, 109 )
 
 position = Vector2( 8701, 124 )
 
-[node name="Cat" parent="Spawners/Spawn4" index="2" instance=ExtResource( 16 )]
+[node name="Cat" parent="Spawners/Spawn4" index="2" instance=ExtResource( 18 )]
 
 position = Vector2( 6772, 169 )
 
-[node name="Cat2" parent="Spawners/Spawn4" index="3" instance=ExtResource( 16 )]
+[node name="Cat2" parent="Spawners/Spawn4" index="3" instance=ExtResource( 18 )]
 
 position = Vector2( 7197, 169 )
 
-[node name="Cat3" parent="Spawners/Spawn4" index="4" instance=ExtResource( 16 )]
+[node name="Cat3" parent="Spawners/Spawn4" index="4" instance=ExtResource( 18 )]
 
 position = Vector2( 7649, 168 )
 
-[node name="Cat5" parent="Spawners/Spawn4" index="5" instance=ExtResource( 16 )]
+[node name="Cat5" parent="Spawners/Spawn4" index="5" instance=ExtResource( 18 )]
 
 position = Vector2( 8543, 166 )
 
-[node name="Cat6" parent="Spawners/Spawn4" index="6" instance=ExtResource( 16 )]
+[node name="Cat6" parent="Spawners/Spawn4" index="6" instance=ExtResource( 18 )]
 
 position = Vector2( 8543, 84 )
 
-[node name="Cat4" parent="Spawners/Spawn4" index="7" instance=ExtResource( 13 )]
+[node name="Cat4" parent="Spawners/Spawn4" index="7" instance=ExtResource( 15 )]
 
 position = Vector2( 8393, 203 )
 
-[node name="Cat8" parent="Spawners/Spawn4" index="8" instance=ExtResource( 13 )]
+[node name="Cat8" parent="Spawners/Spawn4" index="8" instance=ExtResource( 15 )]
 
 position = Vector2( 8260, 205 )
 
-[node name="Cat9" parent="Spawners/Spawn4" index="9" instance=ExtResource( 13 )]
+[node name="Cat9" parent="Spawners/Spawn4" index="9" instance=ExtResource( 15 )]
 
 position = Vector2( 8138, 202 )
 
-[node name="Spawn5" parent="Spawners" index="5" instance=ExtResource( 11 )]
+[node name="Spawn5" parent="Spawners" index="5" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 id = 5
@@ -650,136 +717,136 @@ position = Vector2( 9117, 122 )
 
 position = Vector2( 9755, 136 )
 
-[node name="Cat" parent="Spawners/Spawn5" index="2" instance=ExtResource( 12 )]
+[node name="Cat" parent="Spawners/Spawn5" index="2" instance=ExtResource( 14 )]
 
 position = Vector2( 8951, 204 )
 
-[node name="Cat6" parent="Spawners/Spawn5" index="3" instance=ExtResource( 12 )]
+[node name="Cat6" parent="Spawners/Spawn5" index="3" instance=ExtResource( 14 )]
 
 position = Vector2( 9388, 205 )
 
-[node name="Cat11" parent="Spawners/Spawn5" index="4" instance=ExtResource( 12 )]
+[node name="Cat11" parent="Spawners/Spawn5" index="4" instance=ExtResource( 14 )]
 
 position = Vector2( 9167, 205 )
 
-[node name="Cat27" parent="Spawners/Spawn5" index="5" instance=ExtResource( 12 )]
+[node name="Cat27" parent="Spawners/Spawn5" index="5" instance=ExtResource( 14 )]
 
 position = Vector2( 9604, 206 )
 
-[node name="Cat2" parent="Spawners/Spawn5" index="6" instance=ExtResource( 12 )]
+[node name="Cat2" parent="Spawners/Spawn5" index="6" instance=ExtResource( 14 )]
 
 position = Vector2( 8951, 182 )
 
-[node name="Cat7" parent="Spawners/Spawn5" index="7" instance=ExtResource( 12 )]
+[node name="Cat7" parent="Spawners/Spawn5" index="7" instance=ExtResource( 14 )]
 
 position = Vector2( 9388, 183 )
 
-[node name="Cat12" parent="Spawners/Spawn5" index="8" instance=ExtResource( 12 )]
+[node name="Cat12" parent="Spawners/Spawn5" index="8" instance=ExtResource( 14 )]
 
 position = Vector2( 9167, 183 )
 
-[node name="Cat22" parent="Spawners/Spawn5" index="9" instance=ExtResource( 12 )]
+[node name="Cat22" parent="Spawners/Spawn5" index="9" instance=ExtResource( 14 )]
 
 position = Vector2( 9604, 184 )
 
-[node name="Cat3" parent="Spawners/Spawn5" index="10" instance=ExtResource( 12 )]
+[node name="Cat3" parent="Spawners/Spawn5" index="10" instance=ExtResource( 14 )]
 
 position = Vector2( 8951, 160 )
 
-[node name="Cat8" parent="Spawners/Spawn5" index="11" instance=ExtResource( 12 )]
+[node name="Cat8" parent="Spawners/Spawn5" index="11" instance=ExtResource( 14 )]
 
 position = Vector2( 9388, 161 )
 
-[node name="Cat13" parent="Spawners/Spawn5" index="12" instance=ExtResource( 12 )]
+[node name="Cat13" parent="Spawners/Spawn5" index="12" instance=ExtResource( 14 )]
 
 position = Vector2( 9167, 161 )
 
-[node name="Cat28" parent="Spawners/Spawn5" index="13" instance=ExtResource( 12 )]
+[node name="Cat28" parent="Spawners/Spawn5" index="13" instance=ExtResource( 14 )]
 
 position = Vector2( 9604, 162 )
 
-[node name="Cat4" parent="Spawners/Spawn5" index="14" instance=ExtResource( 12 )]
+[node name="Cat4" parent="Spawners/Spawn5" index="14" instance=ExtResource( 14 )]
 
 position = Vector2( 8951, 140 )
 
-[node name="Cat5" parent="Spawners/Spawn5" index="15" instance=ExtResource( 12 )]
+[node name="Cat5" parent="Spawners/Spawn5" index="15" instance=ExtResource( 14 )]
 
 position = Vector2( 9388, 141 )
 
-[node name="Cat10" parent="Spawners/Spawn5" index="16" instance=ExtResource( 12 )]
+[node name="Cat10" parent="Spawners/Spawn5" index="16" instance=ExtResource( 14 )]
 
 position = Vector2( 9167, 141 )
 
-[node name="Cat21" parent="Spawners/Spawn5" index="17" instance=ExtResource( 12 )]
+[node name="Cat21" parent="Spawners/Spawn5" index="17" instance=ExtResource( 14 )]
 
 position = Vector2( 9604, 142 )
 
-[node name="Cat14" parent="Spawners/Spawn5" index="18" instance=ExtResource( 12 )]
+[node name="Cat14" parent="Spawners/Spawn5" index="18" instance=ExtResource( 14 )]
 
 position = Vector2( 9282.6, 86.0599 )
 rotation = 3.13972
 
-[node name="Cat23" parent="Spawners/Spawn5" index="19" instance=ExtResource( 12 )]
+[node name="Cat23" parent="Spawners/Spawn5" index="19" instance=ExtResource( 14 )]
 
 position = Vector2( 9719.6, 87.0599 )
 rotation = 3.13972
 
-[node name="Cat18" parent="Spawners/Spawn5" index="20" instance=ExtResource( 12 )]
+[node name="Cat18" parent="Spawners/Spawn5" index="20" instance=ExtResource( 14 )]
 
 position = Vector2( 9058.4, 84.0599 )
 rotation = 3.13972
 
-[node name="Cat31" parent="Spawners/Spawn5" index="21" instance=ExtResource( 12 )]
+[node name="Cat31" parent="Spawners/Spawn5" index="21" instance=ExtResource( 14 )]
 
 position = Vector2( 9495.4, 85.0599 )
 rotation = 3.13972
 
-[node name="Cat15" parent="Spawners/Spawn5" index="22" instance=ExtResource( 12 )]
+[node name="Cat15" parent="Spawners/Spawn5" index="22" instance=ExtResource( 14 )]
 
 position = Vector2( 9282.44, 106.06 )
 rotation = 3.13972
 
-[node name="Cat25" parent="Spawners/Spawn5" index="23" instance=ExtResource( 12 )]
+[node name="Cat25" parent="Spawners/Spawn5" index="23" instance=ExtResource( 14 )]
 
 position = Vector2( 9719.44, 107.06 )
 rotation = 3.13972
 
-[node name="Cat20" parent="Spawners/Spawn5" index="24" instance=ExtResource( 12 )]
+[node name="Cat20" parent="Spawners/Spawn5" index="24" instance=ExtResource( 14 )]
 
 position = Vector2( 9058.25, 104.06 )
 rotation = 3.13972
 
-[node name="Cat29" parent="Spawners/Spawn5" index="25" instance=ExtResource( 12 )]
+[node name="Cat29" parent="Spawners/Spawn5" index="25" instance=ExtResource( 14 )]
 
 position = Vector2( 9495.25, 105.06 )
 rotation = 3.13972
 
-[node name="Cat16" parent="Spawners/Spawn5" index="26" instance=ExtResource( 12 )]
+[node name="Cat16" parent="Spawners/Spawn5" index="26" instance=ExtResource( 14 )]
 
 position = Vector2( 9282.26, 126.061 )
 rotation = 3.13972
 
-[node name="Cat24" parent="Spawners/Spawn5" index="27" instance=ExtResource( 12 )]
+[node name="Cat24" parent="Spawners/Spawn5" index="27" instance=ExtResource( 14 )]
 
 position = Vector2( 9719.26, 127.061 )
 rotation = 3.13972
 
-[node name="Cat19" parent="Spawners/Spawn5" index="28" instance=ExtResource( 12 )]
+[node name="Cat19" parent="Spawners/Spawn5" index="28" instance=ExtResource( 14 )]
 
 position = Vector2( 9058.06, 124.061 )
 rotation = 3.13972
 
-[node name="Cat30" parent="Spawners/Spawn5" index="29" instance=ExtResource( 12 )]
+[node name="Cat30" parent="Spawners/Spawn5" index="29" instance=ExtResource( 14 )]
 
 position = Vector2( 9495.06, 125.061 )
 rotation = 3.13972
 
-[node name="Cat17" parent="Spawners/Spawn5" index="30" instance=ExtResource( 12 )]
+[node name="Cat17" parent="Spawners/Spawn5" index="30" instance=ExtResource( 14 )]
 
 position = Vector2( 9282.06, 146.061 )
 rotation = 3.13972
 
-[node name="Cat26" parent="Spawners/Spawn5" index="31" instance=ExtResource( 12 )]
+[node name="Cat26" parent="Spawners/Spawn5" index="31" instance=ExtResource( 14 )]
 
 position = Vector2( 9719.06, 147.061 )
 rotation = 3.13972

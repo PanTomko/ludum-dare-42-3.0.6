@@ -7,23 +7,13 @@ var menu_node
 var gameOver_node
 var winScreen_node
 var credit_node
-var game_won_state = true
+var game_won_state = false
 
 func _ready():
 	menu_node = get_node("Menu")
 	remove_game()
-	reload_game()
 	remove_gameOver()
 	remove_winScreen()
-
-#func _process(delta):
-#
-#
-#
-##		else:
-##			bring_game()
-##			remove_menu()
-#	pass
 
 func remove_game():
 	game_node = get_node("Game")
