@@ -14,6 +14,7 @@ func _ready():
 	remove_game()
 	remove_gameOver()
 	remove_winScreen()
+	remove_credits()
 
 func remove_game():
 	game_node = get_node("Game")
@@ -24,6 +25,10 @@ func remove_game():
 func bring_game():
 	add_child( game_node )
 	add_child( GUI_node )
+	if !game_won_state:
+		get_node("GUI").get_node("Dialog").play_lines("wazon")
+	else:
+		get_node("GUI").get_node("Dialog").play_lines("wazon2")
 
 func remove_menu():
 	menu_node = get_node("Menu")
@@ -57,18 +62,21 @@ func bring_credits():
 func game_over():
 	get_node("Eaten").play()
 	bring_gameOver()
-	remove_game()
 	reload_game()
+	remove_game()
 	get_node("GameOverScreen/AnimationPlayer").play("Show")
 
 func game_won():
 	if !game_won_state:
 		menu_node.get_node("Menu/CenterContainer/MenuOptions/OptionNewGame").text += "++"
-	game_won_state = true
+		game_won_state = true
 	bring_winScreen()
-	remove_game()
-	reload_game()
 	get_node("WinScreen/AnimationPlayer").play("Show")
+	
+	
+	reload_game()
+	remove_game()
+	
 
 func reload_game():
 	game_node = preload("res://Game/Game.tscn").instance()

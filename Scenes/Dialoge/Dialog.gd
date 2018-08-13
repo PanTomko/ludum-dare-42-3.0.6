@@ -8,7 +8,7 @@ var lines = {
 	 	"Get to the door on the other side of the room quick!"
 	],
 	
-	"conti" : [ 
+	"wazon2" : [ 
 		"This sounds diffrent hmmm", 
 		"Path of Exile is cool game btw",
 		"Texting losts of words Texting losts of words Texting losts of words Texting losts of words Texting losts of words Texting losts of words Texting losts of words Texting losts of words"
@@ -24,7 +24,7 @@ var plaing_lines = false
 var active = false
 
 func _ready():
-	play_lines("wazon")
+	pass
 
 func _process(delta):
 	

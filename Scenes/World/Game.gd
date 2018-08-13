@@ -14,3 +14,6 @@ func _process(delta):
 		var parent = get_parent()
 		parent.bring_menu( 1 )
 		parent.remove_game()
+	
+	if $Player.position.x > 9750:
+		get_parent().game_won()

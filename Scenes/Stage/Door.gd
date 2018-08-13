@@ -8,14 +8,13 @@ func _ready():
 	# Initialization here
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _process(delta):
+	pass
 
 
 func _on_Door_body_shape_entered(body_id, body, body_shape, area_shape):
-		
-	if body.name == "Player" :
-		var game = get_parent().get_parent().get_parent()
-		game.game_won()
+	pass
+	#if body.name == "Player" :
+	#	print("hmm")
+	#	var game = get_parent().get_parent().get_parent()
+	#	game.game_won()
