@@ -15,5 +15,6 @@ func _ready():
 #	pass
 func _input(event):
 	if event is InputEventKey and event.pressed:
-		get_parent().bring_menu( -1 )
-		get_parent().remove_credits()
+		if Input.is_action_just_pressed( "ui_up" ):
+			get_parent().bring_menu( -1 )
+			get_parent().remove_credits()
