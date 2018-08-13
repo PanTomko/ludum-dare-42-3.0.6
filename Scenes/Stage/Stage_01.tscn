@@ -23,7 +23,7 @@ extents = Vector2( 5796, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 224, 131 )
 
-[node name="Stage_01" instance=ExtResource( 1 )]
+[node name="Stage_01" index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 3, -6 )
 
@@ -65,6 +65,7 @@ _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="Door" parent="." index="4"]
 
+editor/display_folded = true
 position = Vector2( 9784, 182 )
 
 [node name="map-v2-right" type="Sprite" parent="Door" index="0"]
@@ -78,6 +79,7 @@ position = Vector2( 50, -2 )
 
 [node name="GameOver" type="Area2D" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( -825, 154 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -125,8 +127,6 @@ visible = false
 position = Vector2( 970, 168 )
 
 [node name="Spawners" type="Node" parent="." index="8"]
-
-editor/display_folded = true
 
 [node name="Spawn0" parent="Spawners" index="0" instance=ExtResource( 7 )]
 
@@ -541,6 +541,153 @@ position = Vector2( 8260, 205 )
 
 position = Vector2( 8193, 204 )
 
+[node name="Spawn5" parent="Spawners" index="5" instance=ExtResource( 7 )]
+
+editor/display_folded = true
+id = 5
+
+[node name="Next" parent="Spawners/Spawn5" index="0"]
+
+position = Vector2( 9117, 122 )
+
+[node name="End" parent="Spawners/Spawn5" index="1"]
+
+position = Vector2( 9755, 136 )
+
+[node name="Cat" parent="Spawners/Spawn5" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 8951, 204 )
+
+[node name="Cat6" parent="Spawners/Spawn5" index="3" instance=ExtResource( 8 )]
+
+position = Vector2( 9388, 205 )
+
+[node name="Cat11" parent="Spawners/Spawn5" index="4" instance=ExtResource( 8 )]
+
+position = Vector2( 9167, 205 )
+
+[node name="Cat27" parent="Spawners/Spawn5" index="5" instance=ExtResource( 8 )]
+
+position = Vector2( 9604, 206 )
+
+[node name="Cat2" parent="Spawners/Spawn5" index="6" instance=ExtResource( 8 )]
+
+position = Vector2( 8951, 182 )
+
+[node name="Cat7" parent="Spawners/Spawn5" index="7" instance=ExtResource( 8 )]
+
+position = Vector2( 9388, 183 )
+
+[node name="Cat12" parent="Spawners/Spawn5" index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 9167, 183 )
+
+[node name="Cat22" parent="Spawners/Spawn5" index="9" instance=ExtResource( 8 )]
+
+position = Vector2( 9604, 184 )
+
+[node name="Cat3" parent="Spawners/Spawn5" index="10" instance=ExtResource( 8 )]
+
+position = Vector2( 8951, 160 )
+
+[node name="Cat8" parent="Spawners/Spawn5" index="11" instance=ExtResource( 8 )]
+
+position = Vector2( 9388, 161 )
+
+[node name="Cat13" parent="Spawners/Spawn5" index="12" instance=ExtResource( 8 )]
+
+position = Vector2( 9167, 161 )
+
+[node name="Cat28" parent="Spawners/Spawn5" index="13" instance=ExtResource( 8 )]
+
+position = Vector2( 9604, 162 )
+
+[node name="Cat4" parent="Spawners/Spawn5" index="14" instance=ExtResource( 8 )]
+
+position = Vector2( 8951, 140 )
+
+[node name="Cat5" parent="Spawners/Spawn5" index="15" instance=ExtResource( 8 )]
+
+position = Vector2( 9388, 141 )
+
+[node name="Cat10" parent="Spawners/Spawn5" index="16" instance=ExtResource( 8 )]
+
+position = Vector2( 9167, 141 )
+
+[node name="Cat21" parent="Spawners/Spawn5" index="17" instance=ExtResource( 8 )]
+
+position = Vector2( 9604, 142 )
+
+[node name="Cat14" parent="Spawners/Spawn5" index="18" instance=ExtResource( 8 )]
+
+position = Vector2( 9282.6, 86.0599 )
+rotation = 3.13972
+
+[node name="Cat23" parent="Spawners/Spawn5" index="19" instance=ExtResource( 8 )]
+
+position = Vector2( 9719.6, 87.0599 )
+rotation = 3.13972
+
+[node name="Cat18" parent="Spawners/Spawn5" index="20" instance=ExtResource( 8 )]
+
+position = Vector2( 9058.4, 84.0599 )
+rotation = 3.13972
+
+[node name="Cat31" parent="Spawners/Spawn5" index="21" instance=ExtResource( 8 )]
+
+position = Vector2( 9495.4, 85.0599 )
+rotation = 3.13972
+
+[node name="Cat15" parent="Spawners/Spawn5" index="22" instance=ExtResource( 8 )]
+
+position = Vector2( 9282.44, 106.06 )
+rotation = 3.13972
+
+[node name="Cat25" parent="Spawners/Spawn5" index="23" instance=ExtResource( 8 )]
+
+position = Vector2( 9719.44, 107.06 )
+rotation = 3.13972
+
+[node name="Cat20" parent="Spawners/Spawn5" index="24" instance=ExtResource( 8 )]
+
+position = Vector2( 9058.25, 104.06 )
+rotation = 3.13972
+
+[node name="Cat29" parent="Spawners/Spawn5" index="25" instance=ExtResource( 8 )]
+
+position = Vector2( 9495.25, 105.06 )
+rotation = 3.13972
+
+[node name="Cat16" parent="Spawners/Spawn5" index="26" instance=ExtResource( 8 )]
+
+position = Vector2( 9282.26, 126.061 )
+rotation = 3.13972
+
+[node name="Cat24" parent="Spawners/Spawn5" index="27" instance=ExtResource( 8 )]
+
+position = Vector2( 9719.26, 127.061 )
+rotation = 3.13972
+
+[node name="Cat19" parent="Spawners/Spawn5" index="28" instance=ExtResource( 8 )]
+
+position = Vector2( 9058.06, 124.061 )
+rotation = 3.13972
+
+[node name="Cat30" parent="Spawners/Spawn5" index="29" instance=ExtResource( 8 )]
+
+position = Vector2( 9495.06, 125.061 )
+rotation = 3.13972
+
+[node name="Cat17" parent="Spawners/Spawn5" index="30" instance=ExtResource( 8 )]
+
+position = Vector2( 9282.06, 146.061 )
+rotation = 3.13972
+
+[node name="Cat26" parent="Spawners/Spawn5" index="31" instance=ExtResource( 8 )]
+
+position = Vector2( 9719.06, 147.061 )
+rotation = 3.13972
+
 [connection signal="body_shape_entered" from="GameOver" to="GameOver" method="_on_GameOver_body_shape_entered"]
 
 
@@ -549,3 +696,4 @@ position = Vector2( 8193, 204 )
 [editable path="Spawners/Spawn2"]
 [editable path="Spawners/Spawn3"]
 [editable path="Spawners/Spawn4"]
+[editable path="Spawners/Spawn5"]
