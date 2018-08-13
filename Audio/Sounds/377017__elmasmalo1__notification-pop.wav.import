@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/377017__elmasmalo1__notification-pop.wav-2dc917b8b4599fccc5930ca136911f21.sample"
+
+[deps]
+
+source_file="res://Audio/Sounds/377017__elmasmalo1__notification-pop.wav"
+dest_files=[ "res://.import/377017__elmasmalo1__notification-pop.wav-2dc917b8b4599fccc5930ca136911f21.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
