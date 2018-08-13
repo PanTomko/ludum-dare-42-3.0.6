@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/350905__cabled-mess__jump-c-05.wav-5db506b3604987107cae32f425bb2c37.sample"
+
+[deps]
+
+source_file="res://Audio/Sounds/350905__cabled-mess__jump-c-05.wav"
+dest_files=[ "res://.import/350905__cabled-mess__jump-c-05.wav-5db506b3604987107cae32f425bb2c37.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
