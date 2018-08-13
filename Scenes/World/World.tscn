@@ -9,7 +9,7 @@
 [ext_resource path="res://Resources/Dynamic-Font/munro_menu.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Scenes/World/WinScreen.gd" type="Script" id=8]
 
-[node name="World" type="Node"]
+[node name="World" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
