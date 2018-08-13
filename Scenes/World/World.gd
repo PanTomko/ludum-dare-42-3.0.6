@@ -6,6 +6,7 @@ var GUI_node
 var menu_node
 var gameOver_node
 var winScreen_node
+var credit_node
 
 func _ready():
 	menu_node = get_node("Menu")
@@ -53,6 +54,13 @@ func remove_winScreen():
 
 func bring_winScreen():
 	add_child( winScreen_node )
+
+func remove_credits():
+	credit_node = get_node("Credits")
+	remove_child( get_node("Credits") )
+
+func bring_credits():
+	add_child(credit_node)
 
 func game_over():
 	get_node("Eaten").play()
