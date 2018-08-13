@@ -24,7 +24,7 @@ position = Vector2( 0, 0 )
 stream = ExtResource( 4 )
 volume_db = -20.0
 pitch_scale = 1.0
-autoplay = false
+autoplay = true
 mix_target = 0
 bus = "Master"
 
