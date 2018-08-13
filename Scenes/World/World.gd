@@ -55,14 +55,17 @@ func bring_winScreen():
 	add_child( winScreen_node )
 
 func game_over():
+	get_node("Eaten").play()
 	bring_gameOver()
 	remove_game()
 	reload_game()
-	
+	get_node("GameOverScreen/AnimationPlayer").play("Show")
+
 func game_won():
 	bring_winScreen()
 	remove_game()
 	reload_game()
+	get_node("WinScreen/AnimationPlayer").play("Show")
 
 func reload_game():
 	game_node = preload("res://Game/Game.tscn").instance()
