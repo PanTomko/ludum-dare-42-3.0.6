@@ -3,9 +3,9 @@ extends Control
 # Lines we can display
 var lines = {
 	"wazon" : [ 
-		"Runnnnnnnnnn.",
-	 	"Tyr to avoid those crqazy ass cats.",
-	 	"Go to fast to doors on the other side of room !"
+		"Runnnnnnnnnn!",
+	 	"Try to avoid those crazy ass cats.",
+	 	"Get to the door on the other side of the room quick!"
 	],
 	
 	"conti" : [ 
