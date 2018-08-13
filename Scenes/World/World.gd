@@ -11,10 +11,12 @@ var game_won_state = false
 
 func _ready():
 	menu_node = get_node("Menu")
+	
 	remove_game()
 	remove_gameOver()
 	remove_winScreen()
 	remove_credits()
+	
 
 func remove_game():
 	game_node = get_node("Game")
@@ -73,9 +75,9 @@ func game_won():
 	bring_winScreen()
 	get_node("WinScreen/AnimationPlayer").play("Show")
 	
-	
-	reload_game()
 	remove_game()
+	reload_game()
+	
 	
 
 func reload_game():
