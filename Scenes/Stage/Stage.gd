@@ -18,7 +18,6 @@ func _ready():
 func _process(delta):
 	if current_spawn.x < get_parent().get_node("Player").position.x:
 		if max_id_spawner > id_spawn + 1:
-			print(id_spawn + 1)
 			set_spawn( id_spawn + 1 )
 
 func set_spawn( id ):

@@ -17,6 +17,11 @@ func _physics_process(delta):
 	# applay force that accumulate
 	accumulate_motion += gravity_force * delta
 	
+	if is_on_floor():
+		if Input.is_action_just_pressed("ui_up"):
+			get_node("AnimationPlayer").play("Jump")
+			accumulate_motion.y -= jump_strenght
+	
 	# movment control
 	if Input.is_action_pressed("ui_right"):
 		motion.x += speed
@@ -34,10 +39,7 @@ func _physics_process(delta):
 		accumulate_motion.y = 0
 		motion.y = 0
 	
-	if is_on_floor():
-		if Input.is_action_just_pressed("ui_up"):
-			get_node("AnimationPlayer").play("Jump")
-			accumulate_motion.y -= jump_strenght
+
 	
 	# applay motion and reset it
 	move_and_slide( motion + accumulate_motion, UP)

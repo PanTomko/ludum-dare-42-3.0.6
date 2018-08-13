@@ -64,8 +64,9 @@ func bring_credits():
 func game_over():
 	get_node("Eaten").play()
 	bring_gameOver()
-	reload_game()
+	
 	remove_game()
+	reload_game()
 	get_node("GameOverScreen/AnimationPlayer").play("Show")
 
 func game_won():

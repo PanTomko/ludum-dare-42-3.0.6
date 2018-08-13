@@ -9,9 +9,26 @@ var lines = {
 	],
 	
 	"wazon2" : [ 
-		"This sounds diffrent hmmm", 
-		"Path of Exile is cool game btw",
-		"Texting losts of words Texting losts of words Texting losts of words Texting losts of words Texting losts of words Texting losts of words Texting losts of words Texting losts of words"
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow",
+		"meow, meow, meow, meow, meow, meow, meow, meow"
 	]
 }
 
@@ -91,7 +108,6 @@ func on_lines_ends( lines_name ):
 			pass
 			#play_lines( "conti" )
 		_:
-			print("done")
 			if plaing_lines == false:
 				fade_lines()
 

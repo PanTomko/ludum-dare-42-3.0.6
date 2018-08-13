@@ -16,5 +16,5 @@ func _process(delta):
 		parent.remove_game()
 	
 	if $Player.position.x > 9750:
-		$Player.position.x = 217
+		#$Player.position.x = 217
 		get_parent().game_won()
