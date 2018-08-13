@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/POL-pet-park-short.wav-0bcd7e318f9eaf13a598e275e4bb8113.sample"
+
+[deps]
+
+source_file="res://Audio/Music/POL-pet-park-short.wav"
+dest_files=[ "res://.import/POL-pet-park-short.wav-0bcd7e318f9eaf13a598e275e4bb8113.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
