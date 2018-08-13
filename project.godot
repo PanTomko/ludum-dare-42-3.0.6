@@ -12,8 +12,6 @@ config_version=3
 
 config/name="Cat Cat Attack !"
 run/main_scene="res://Scenes/World/World.tscn"
-run/disable_stdout=true
-run/disable_stderr=true
 config/icon="res://Textures/cat-cat-attack-icon-tiny.png"
 
 [display]
