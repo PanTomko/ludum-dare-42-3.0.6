@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/supremekitty.png-a22ebdced558f4694dce587d85ab93a7.stex"
+path="res://.import/cat-cat-attack-icon.png-1bf782b4a56b347cbac50de2b2bc63c4.stex"
 
 [deps]
 
-source_file="res://Textures/cats/supremekitty.png"
-dest_files=[ "res://.import/supremekitty.png-a22ebdced558f4694dce587d85ab93a7.stex" ]
+source_file="res://Textures/cat-cat-attack-icon.png"
+dest_files=[ "res://.import/cat-cat-attack-icon.png-1bf782b4a56b347cbac50de2b2bc63c4.stex" ]
 
 [params]
 
